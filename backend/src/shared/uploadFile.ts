@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import config from '../config'
-const cloudinary = require('cloudinary').v2
+import { v2 as cloudinary } from 'cloudinary'
 
 // Configuration
 cloudinary.config({

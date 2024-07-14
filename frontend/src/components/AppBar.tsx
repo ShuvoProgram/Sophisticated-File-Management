@@ -12,12 +12,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Logo } from './logo';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-interface AppAppBarProps {
-  mode: PaletteMode;
-  toggleColorMode: () => void;
-}
+// interface AppAppBarProps {
+//   mode: PaletteMode;
+//   toggleColorMode: () => void;
+// }
 
-const AppBarNav: React.FC<AppAppBarProps> = ({ mode, toggleColorMode }) => {
+const AppBarNav: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();

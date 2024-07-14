@@ -31,14 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
         <Provider store={store}>
-          <SessionProvider>
+          {/* <SessionProvider> */}
       <body>
       <ThemeProvider theme={theme}>
             {children}
             <Toaster />
       </ThemeProvider>
       </body>
-          </SessionProvider>
+          {/* </SessionProvider> */}
         </Provider>
     </html>
   );

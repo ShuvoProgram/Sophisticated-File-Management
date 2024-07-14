@@ -4,11 +4,6 @@ import { useGetFileQuery } from '@/redux/feature/file/fileApi';
 import { CircularProgress, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Editor } from '@/lib/types';
-import { pdfjs, Document, Page } from 'react-pdf';
-
-// Set the workerSrc for pdfjs
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
 
 interface FileUpload {
   id: string;
@@ -56,21 +51,13 @@ const FileViewer: React.FC<FileEditor> = ({ editor }) => {
           className="flex flex-col items-center"
           onClick={() => editor?.addImage(file.Url)}
         >
-          {file.Url.toLowerCase().endsWith('.pdf') ? (
-            <div className="w-32 h-32 flex items-center justify-center border border-gray-300 rounded-lg">
-              <Document file={file.Url}>
-                <Page pageNumber={1} width={128} />
-              </Document>
-            </div>
-          ) : (
-            <Image
+          <Image
               src={file.Url}
               alt={`file-${file.originalName}`}
               height={200}
               width={200}
               className="max-w-full h-auto rounded-lg"
             />
-          )}
         </button>
       ))}
     </div>
