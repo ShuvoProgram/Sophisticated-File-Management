@@ -6,7 +6,7 @@ sophisticated file management system using Next.js and Material-UI (MUI). It ena
 
 ## Demo
 
-**Live Link to BeatBox: [Explore BeatBox](https://singularity-music.vercel.app)**
+**Live Link to Sophisticated: [Explore Sophisticated](https://sophisticated-file-management-wheat.vercel.app)**
 
 ## Technologies
 

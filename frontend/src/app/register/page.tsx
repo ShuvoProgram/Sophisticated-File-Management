@@ -50,7 +50,7 @@ const Register = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Add your form submission logic here
-    console.log('Form submitted:', form);
+
     const result = await registerUser(form);
     const { data: responseData, error } = result;
     if (responseData?.statusCode === 200) {

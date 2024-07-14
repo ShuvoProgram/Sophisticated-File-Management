@@ -45,9 +45,9 @@ const FileViewer: React.FC<FileEditor> = ({ editor }) => {
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4">
-      {data.data.map((file: FileUpload) => (
+      {data.data.map((file: FileUpload, idx: number) => (
         <button
-          key={file.id}
+          key={idx}
           className="flex flex-col items-center"
           onClick={() => editor?.addImage(file.Url)}
         >

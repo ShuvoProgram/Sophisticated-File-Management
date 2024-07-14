@@ -21,7 +21,7 @@ const AppBarNav: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
-  console.log(user);
+
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);

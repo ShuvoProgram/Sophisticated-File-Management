@@ -3,9 +3,9 @@ import multer from 'multer';
 import path from "path";
 
 const storage = multer.diskStorage({
-  destination: (req: any, file: any, cb: any) => {
-    cb(null, process.cwd() + './src/uploads/')
-  },
+  // destination: (req: any, file: any, cb: any) => {
+  //   cb(null)
+  // },
   
   filename: (req: any, file: any, cb: any) => {
     const fileName = Date.now() + "_" + file.originalname;
@@ -13,6 +13,8 @@ const storage = multer.diskStorage({
     cb(null, fileName);
   },
 });
+
+// const storage = multer.memoryStorage();
 
 export const upload = multer({
   storage: storage,

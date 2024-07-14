@@ -27,11 +27,9 @@ export default function SignIn() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', form);
     const result = await loginUser(form);
     const { data: responseData, error } = result;
     if (responseData?.statusCode === 200) {
-      console.log(responseData);
       toast.success(responseData?.message);
       dispatch(setToken(responseData?.data?.accessToken));
       await dispatch(getUser());

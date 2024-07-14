@@ -25,13 +25,13 @@ const Canvas = () => {
       setHistory((prevHistory) => {
         if (prevHistory.length === 0 || prevHistory[prevHistory.length - 1] !== json) {
           const newHistory = [...prevHistory, json];
-          console.log('History:', newHistory);
+        
           return newHistory;
         }
         return prevHistory;
       });
       setRedoStack([]);
-      console.log('Redo Stack reset');
+   
     };
 
     fabricCanvas.on('object:added', updateHistory);

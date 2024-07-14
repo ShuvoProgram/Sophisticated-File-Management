@@ -83,7 +83,7 @@ const deleteUser = async (id: string): Promise<IUser | null> => {
 }
 
 const profileUser = async (email: string): Promise<IUser | null> => {
-  console.log(email)
+
   if (
     !(await User.findOne({
       email,

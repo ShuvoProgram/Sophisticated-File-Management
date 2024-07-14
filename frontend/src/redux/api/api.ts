@@ -13,7 +13,6 @@ import {
       baseUrl: process.env.NEXT_PUBLIC_BACKEND_API,
       prepareHeaders: (headers, { getState }: any) => {
         const token = (getState() as RootState)?.auth?.accessToken;
-        console.log(token)
         headers.set("authorization", token as string);
         return headers;
       },

@@ -41,7 +41,7 @@ const FileUpload: React.FC = () => {
     try {
       setUploading(true);
       setError(null);
-      const filePath = await uploadFile(file);
+      await uploadFile(file);
       // onUpload(filePath);
     } catch (error: any) {
       setError(error.message);
@@ -57,13 +57,15 @@ const FileUpload: React.FC = () => {
     const res = await createFile(formData);
     const { data: responseData, error } = res;
 
+    if (responseData?.statusCode === 200) {
+      throw new Error(responseData?.message || 'File upload Success');
+    }
+
     if (error) {
       throw new Error(error.data?.message || 'File upload failed');
     }
 
-    if (responseData?.statusCode !== 200) {
-      throw new Error(responseData?.message || 'File upload failed');
-    }
+    
 
     return responseData.filePath;
   };
